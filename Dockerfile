@@ -1,12 +1,11 @@
 FROM ansible/ubuntu14.04-ansible:stable
 
-# Add playbooks to the Docker image
+# Dockerイメージにansibleディレクトリを追加
 ADD ansible /srv/example/
 WORKDIR /srv/example
 
-# Run Ansible to configure the Docker image
+# Playbookをローカルマシンで実行
 RUN ansible-playbook site.yml -c local
 
-# Other Dockerfile directives are still valid
+# 動作確認のための設定
 EXPOSE 22 3000 80
-ENTRYPOINT ["/usr/local/bin/apachectl", "-DFOREGROUND"]
