@@ -1,5 +1,4 @@
-FROM ansible/centos7-ansible:stable
-# or, for example, FROM ansible/ubuntu14.04-ansible:stable
+FROM ansible/ubuntu14.04-ansible:stable
 
 # Add playbooks to the Docker image
 ADD ansible /srv/example/
